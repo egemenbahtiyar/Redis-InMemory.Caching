@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace InMemory.Caching.Controllers
@@ -11,16 +12,32 @@ namespace InMemory.Caching.Controllers
         {
             _memoryCache = memoryCache;
         }
-        
-        // GET
         public IActionResult Index()
         {
-            _memoryCache.Set("gun", 14);
+            _memoryCache.Set("zaman", DateTime.Now.ToString());
+            //1.yol
+            if (String.IsNullOrEmpty(_memoryCache.Get<string>("zaman")))
+            {
+                _memoryCache.Set("zaman", DateTime.Now.ToString());
+            }
+            //2.yol
+
+            if (!_memoryCache.TryGetValue("zaman", out string zamancache))
+            {
+                _memoryCache.Set("zaman", DateTime.Now.ToString());
+            }
+
             return View();
         }
+
         public IActionResult Show()
         {
-            ViewBag.value = _memoryCache.Get("gun");
+            _memoryCache.GetOrCreate("zaman", entry =>
+            {
+                return DateTime.Now.ToString();
+            });
+
+            ViewBag.zaman = _memoryCache.Get<string>("zaman");
             return View();
         }
     }
