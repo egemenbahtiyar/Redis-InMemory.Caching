@@ -14,30 +14,22 @@ namespace InMemory.Caching.Controllers
         }
         public IActionResult Index()
         {
-            _memoryCache.Set("zaman", DateTime.Now.ToString());
-            //1.yol
-            if (String.IsNullOrEmpty(_memoryCache.Get<string>("zaman")))
-            {
-                _memoryCache.Set("zaman", DateTime.Now.ToString());
-            }
-            //2.yol
+            MemoryCacheEntryOptions options = new MemoryCacheEntryOptions();
 
-            if (!_memoryCache.TryGetValue("zaman", out string zamancache))
-            {
-                _memoryCache.Set("zaman", DateTime.Now.ToString());
-            }
+            options.AbsoluteExpiration = DateTime.Now.AddMinutes(1);
+
+            options.SlidingExpiration = TimeSpan.FromSeconds(10);
+            _memoryCache.Set<string>("zaman", DateTime.Now.ToString(), options);
 
             return View();
         }
 
         public IActionResult Show()
         {
-            _memoryCache.GetOrCreate("zaman", entry =>
-            {
-                return DateTime.Now.ToString();
-            });
+            _memoryCache.TryGetValue("zaman", out string zamancache);
 
-            ViewBag.zaman = _memoryCache.Get<string>("zaman");
+            ViewBag.zaman = zamancache;
+
             return View();
         }
     }
