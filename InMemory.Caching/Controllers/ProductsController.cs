@@ -15,6 +15,12 @@ namespace InMemory.Caching.Controllers
         // GET
         public IActionResult Index()
         {
+            _memoryCache.Set("gun", 14);
+            return View();
+        }
+        public IActionResult Show()
+        {
+            ViewBag.value = _memoryCache.Get("gun");
             return View();
         }
     }
