@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
+    Product p = ViewBag.product;
 }
 
 <h2>@ViewBag.zaman</h2>
+<h1>@p.Name</h1>
+<h2>@p.Price</h2>
