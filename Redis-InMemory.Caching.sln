@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory.Caching", "InMemory.Caching\InMemory.Caching.csproj", "{E4735228-7BDD-4E21-994A-E14EAC615E65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDistributedCacheRedisApp.Web", "IDistributedCacheRedisApp.Web\IDistributedCacheRedisApp.Web.csproj", "{1E1F15EF-F155-4979-8E71-5F75A9250DC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E4735228-7BDD-4E21-994A-E14EAC615E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4735228-7BDD-4E21-994A-E14EAC615E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4735228-7BDD-4E21-994A-E14EAC615E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1F15EF-F155-4979-8E71-5F75A9250DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1F15EF-F155-4979-8E71-5F75A9250DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1F15EF-F155-4979-8E71-5F75A9250DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1F15EF-F155-4979-8E71-5F75A9250DC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
