@@ -1,7 +1,9 @@
 ﻿
 @{
     Layout = null;
-    var value = ViewBag.Value;
+    Product value = ViewBag.product;
 }
 
-<h1>@value</h1>
+<h1>@value.Id</h1>
+<h1>@value.Name</h1>
+<h1>@value.Price</h1>
