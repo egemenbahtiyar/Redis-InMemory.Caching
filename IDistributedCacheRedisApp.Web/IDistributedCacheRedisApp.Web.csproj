@@ -8,4 +8,8 @@
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\images" />
+    </ItemGroup>
+
 </Project>

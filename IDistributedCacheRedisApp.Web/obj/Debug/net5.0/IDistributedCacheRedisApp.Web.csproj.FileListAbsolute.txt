@@ -55,3 +55,4 @@ C:\Users\ebaht\RiderProjects\Redis-InMemory.Caching\IDistributedCacheRedisApp.We
 C:\Users\ebaht\RiderProjects\Redis-InMemory.Caching\IDistributedCacheRedisApp.Web\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
 C:\Users\ebaht\RiderProjects\Redis-InMemory.Caching\IDistributedCacheRedisApp.Web\obj\Debug\net5.0\Razor\Views\Products\Show.cshtml.g.cs
 C:\Users\ebaht\RiderProjects\Redis-InMemory.Caching\IDistributedCacheRedisApp.Web\obj\Debug\net5.0\Razor\Views\Products\Remove.cshtml.g.cs
+C:\Users\ebaht\RiderProjects\Redis-InMemory.Caching\IDistributedCacheRedisApp.Web\obj\Debug\net5.0\Razor\Views\Products\ImageCache.cshtml.g.cs

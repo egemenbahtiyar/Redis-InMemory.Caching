@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -51,6 +52,23 @@ namespace IDistributedCacheRedisApp.Web.Controllers
         public async Task<IActionResult> Remove()
         {
             await _distributedCache.RemoveAsync("surname");
+            return View();
+        }
+        public IActionResult ImageUrl()
+        {
+            byte[] resimbyte = _distributedCache.Get("resim");
+
+            return File(resimbyte, "image/jpg");
+        }
+
+        public IActionResult ImageCache()
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/download.jpg");
+
+            byte[] imageByte = System.IO.File.ReadAllBytes(path);
+
+            _distributedCache.Set("resim", imageByte);
+
             return View();
         }
     }
